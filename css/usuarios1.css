@@ -1,0 +1,86 @@
+main{
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+header{
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    background-color: rgb(43, 43, 43);
+}
+form{
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px 1px black;
+    display: flex;
+    flex-direction: column;
+}
+input, select{
+    padding: 10px;
+    outline: none;
+    border: none;
+}
+.dato_vacio{
+    box-shadow: 0 0 5px 3px red;
+    border-radius: 10px;
+    /* color: red; */
+}
+.dato_vacio::placeholder{
+    color: red;
+}
+.campo:focus{
+    transition: .5s;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 3px rgb(167,24,102);
+}
+
+form > div{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+button{
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 200px;
+    color: white;
+    align-self: center;
+    font-weight: bolder;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s;
+    background: rgb(43,43,43);
+    /* background: linear-gradient(0deg, rgb(167,24,102) 0%, rgba(43,43,43,1) 100%); */
+}
+button:hover{
+    transition: .2s;
+    background: rgb(167,24,102) 0%;
+    /* background: linear-gradient(0deg, rgba(43,43,43,1) 0%, rgb(167,24,102) 100%); */
+}
+table{
+    border-collapse: collapse;
+}
+table th{
+    color: white;
+    padding: 5px 10px;
+    background-color: rgb(167,24,102);
+}
+td{
+    padding: 10px;
+}
+
+
+@media (min-width: 600px) {
+    form{
+        width: 50%;
+    }
+}

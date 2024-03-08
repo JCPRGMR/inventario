@@ -1,0 +1,60 @@
+////CODIGO DE LA FUNCION EXEL
+
+/**
+ *  CODIGO QUE LEE TODOS LOS REGISTROS DE LA TABLA DE EXCEL
+ *  USANDO UN FOREACH ALMACENANDO EL ARRAY EN LA VARIABLE $newDato
+ *  ASI RECORRER Y CAPTURAR EL VALOR DEL ARRAY newDato[CELDA-EXCEL] EN UNA VARIABLE $column7Value
+ *  LUEGO PASA POR UN CONDICION QUE VERIFICA SI LA VARIABLE $column7Value ES NULA
+ *  SI NO ES NULA ELIMINIA SU ESPACIO DEL FINAL ADEMAS DE CONVERTIRLO A MAYUSCULA
+ *  LUEGO SE GUARDA EN UNA VARIABLE $CapS LA ULTIMA LETRA DE LA CADENA DE LA VARIABLE $column7Value
+ *  VERIFICA SI ES UNA 'S' LA ELIMINA ELIMINANDO DATOS EN PLURAL
+ *  FINALIZANDO TODO SE CREA UN ARRAY $uniqueArray QUE ALMACENARA LOS DATOS NO REPETIDOS
+ *  CREA UNA VARIABLE EN LA QUE NO SE GUARDARAN VALORES REPETIDOS
+ *  
+*/
+
+for ($cell = 0; $cell < count($data); $cell++) {
+
+                    $uniqueArray = array();
+                    foreach ($data as $newDato) {
+                        $column7Value = $newDato[7];
+                        
+                        //VALIDAR SI ES PLURAL Y CONVERTIR A MAYUSCULA
+                        if ($column7Value !== null) {
+                            $column7Value = trim(strtoupper($column7Value));
+                            $CapS = substr($column7Value, -1);
+                            if($CapS == 'S'){
+                                $str_size = strlen($column7Value);
+                                $column7Value = substr($column7Value, 0, $str_size-1);
+                                // echo $column7Value . '<br>';
+                            }
+                        }
+                    
+                        if (!in_array($column7Value, $uniqueArray)) {
+                            if(!is_null($column7Value)){
+                                $uniqueArray[] = $column7Value;
+                            }
+                        }
+                    }
+                
+                    /**
+                     * @var SUBIR_DATOS_DE_FORMA_MASIVA-A-MYSQL____1
+                     */
+                    // // Prepara la consulta de inserción
+                    // $sql = "INSERT INTO tipos (des_tipo, registro_tipo) VALUES (?, NOW())";
+                    // $stmt = Conexion::Abrir()->prepare($sql);
+                
+                    // // Vincula el valor de $column7Value al marcador de posición
+                    // $stmt->bindParam(1, $column7Value, PDO::PARAM_STR);
+                
+                    // if ($stmt->execute()) {
+                    //     echo "Dato [$column7Value] insertado correctamente";
+                    // } else {
+                    //     echo "Dato [$column7Value] no insertado";
+                    // }
+                    /**
+                     * @var FIN_SUBIR_DATOS_DE_FORMA_MASIVA-A-MYSQL____1
+                     */
+                }
+                // var_dump($uniqueArray);
+                print_r($uniqueArray);

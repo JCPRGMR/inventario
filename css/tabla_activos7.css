@@ -1,0 +1,231 @@
+body{
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+header{
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    box-shadow: 0 0 20px 1px rgb(85, 85, 85);
+    align-items: center;
+}
+.buscador{
+    position: sticky;
+}
+.btn{
+    padding: 10px;
+    transition: .3s;
+    box-shadow: 0 0 5px 1px rgb(43, 43, 43);
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+    color: rgb(43, 43, 43);
+}
+.btn:hover{
+    transition: .3s;
+    background-color: rgb(43, 43, 43);
+    color: white;
+}
+.btn-group{
+    display: flex;
+    gap: 10px;
+}
+.input{
+    transition: .3s;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 5px 1px gray;
+    padding: 10px;
+}
+.input::placeholder{
+    color: black;
+}
+.input:focus{
+    transition: .3s;
+    box-shadow: 0 0 5px 1px rgb(167,24,102);
+}
+table{
+    border-collapse: collapse;
+    border-radius: 10px;
+    /* position: relative; */
+}
+th{
+    user-select: none;
+    box-sizing: content-box;
+    background-color: rgb(87, 34, 63);
+    color: white;
+    white-space: nowrap;
+    padding: 10px;
+}
+thead th{
+    position: sticky;
+    top: 50px;
+}
+td{
+    text-align: center;
+    user-select: none;
+    border: 1px solid black;
+}
+tbody{
+    /* position: sticky; */
+    max-height: 100px;
+    overflow: hidden;
+}
+tbody > tr{
+    user-select: none;
+}
+tbody > tr > td{
+    padding: 0 10px;
+}
+tbody > tr:hover{
+    background-color: rgb(167,24,102);
+    color: white;
+}
+.cod_old{
+    background-color: rgba(167, 24, 103, 0.411);
+}
+.cod_new{
+    background-color: rgba(0, 0, 0, 0.234);
+}
+.activos, .details{
+    text-align: justify;
+    white-space: nowrap;
+    max-width: 150px;
+    overflow-x: scroll;
+}
+.activos::-webkit-scrollbar, .details::-webkit-scrollbar{
+    height: 5px;
+    cursor: default;
+}
+.activos::-webkit-scrollbar-thumb, .details::-webkit-scrollbar-thumb{
+    background-color: white;
+    border: none;
+    /* border-radius: 10px; */
+    /* margin-bottom: 10px; */
+}
+.pagination{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.n_page{
+    width: 35px;
+    height: 20px;
+    padding: 5px;
+    text-align: center;
+    box-shadow: 0 0 5px .1px gray;
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+}
+.n_page:hover{
+    transition: .3s;
+    background-color: rgb(167,24,102);
+    color: white;
+}
+.info-pagination{
+    position: sticky;
+    left: 0;
+    background-color: #007bff;
+    text-transform: uppercase;
+}
+.qr{
+    background-color: red;
+}
+.header-buscador{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.codigo:nth-child(1){
+    border: none;
+    /* border: 1px solid rgb(167,24,102); */
+    background-color: rgb(167,24,102);
+}
+.codigo:nth-child(2){
+    /* border: 1px solid rgb(43, 43, 43); */
+    border-radius: 0 10px 0 0;
+    background-color: rgb(43, 43, 43);
+}
+.old{
+    border: 1px solid rgb(167,24,102);
+    background-color: rgb(167,24,102);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.new{
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgb(43, 43, 43);
+    border: 1px solid rgb(43, 43, 43);
+}
+.cabecera{
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    background-color: white;
+}
+main{
+    overflow: scroll;
+}
+main::-webkit-scrollbar{
+    /* background-color: transparent; */
+    width: 10px;
+    height: 10px;
+}
+main::-webkit-scrollbar-thumb{
+    background-color: rgb(167,24,102);
+    border-radius: 10px;
+}
+@media (max-width: 800px) {
+    header{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .buscador{
+        width: 100%;
+        display: flex;
+        margin-top: 20px;
+        padding: 10px 0;
+        justify-content: center;
+    }
+    .input{
+        transition: .3s;
+        border-radius: 15px;
+        outline: none;
+        border: none;
+        box-shadow: 0 0 5px 1px gray;
+        padding: 10px;
+    }
+    .input::placeholder{
+        color: black;
+    }
+    .input:focus{
+        transition: .3s;
+        transform: scale(1.1);
+        box-shadow: 0 0 5px 1px blue;
+    }
+    .btn-group{
+        display: flex;
+        /* flex-wrap: wrap; */
+        font-size: 13px;
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+    }
+    .btn{
+        padding: 10px;
+    }
+    .pagination{
+        flex-wrap: wrap;
+        position: sticky;
+        left: 0;
+    }
+}

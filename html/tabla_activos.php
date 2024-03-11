@@ -131,6 +131,18 @@
     <script src="../js/BuscadorSQL3.js"></script>
 
     <script>
+        alert(`
+        A) Cambios
+            1. Ruta de imagenes de activos a => D:/inventario_img
+            2. Ruta de imagenes de facturas a => D:/inventario_img
+            3. Ruta de imagenes de qr a => D:/inventario_img
+        B) Pendientes
+            1. Arreglar y optimizar el buscador
+            2. Arreglar la salida de pdf de activos y Excel
+            3. Solucionar el bug en el movimiento de pantallas de las flechas
+        C) Propuestas
+            1. Mover todo el proyecto al disco D: o a otra unidad
+        `);
         document.getElementById('buscador').addEventListener('input', function() {
             var valorBusqueda = this.value;
             localStorage.setItem('valorBusqueda', valorBusqueda);

@@ -137,7 +137,7 @@
                     <label for="">CAMBIAR FOTO DE FACTURA</label>
                     <input type="file" name="editar_foto_factura" id="" <?= ($_SESSION['rol'] === 3 )? 'disabled' : ''; ?> >
                     <div class="foto_container">
-                        <img src="../img/img_facturas/<?php echo $activo->foto_factura ?>" class="fotos" alt="No se encontro la foto de la factura">
+                        <img src="/ruta_imagenes/facturas/<?php echo $activo->foto_factura ?>" class="fotos" alt="No se encontro la foto de la factura">
                     </div>
                 </div>
                 <!-- FIN DE FACTURA -->
@@ -157,7 +157,7 @@
                     <label for="">CAMBIAR FOTO DE ACTIVO</label>
                     <input type="file" name="editar_foto_activo" id="" <?= ($_SESSION['rol'] === 3 )? 'disabled' : ''; ?>>
                     <div class="foto_container">
-                        <img src="../img/img_activos/<?php echo $activo->foto_activo ?>" class="fotos" alt="No se encontro la foto del activo <?= $activo->foto_activo ?>">
+                        <img src="/ruta_imagenes/activos/<?php echo $activo->foto_activo ?>" class="fotos" alt="No se encontro la foto del activo <?= $activo->foto_activo ?>">
                     </div>
                 </div>
                 <!-- ESTADO ACTUA -->
@@ -174,7 +174,7 @@
                 </div>
                 <!-- FIN DE ESTADO ACTUAL -->
                 <div class="QR">
-                    <img src="../img/img_qr/<?= $activo->qr ?>" alt="No se genero el QR">
+                    <img src="/ruta_imagenes/qr/<?= $activo->qr ?>" alt="No se genero el QR">
                 </div>
             </div>
             <button type="submit" name="guardar_cambios">GUARDAR CAMBIOS</button>

@@ -291,7 +291,7 @@
                     ,$styles
                 );                
         
-                $carpetaDestino = '../img/img_qr';
+                $carpetaDestino = 'D:/inventario_img/qr';
         
                 $nombreArchivo = $datos->id_activo . '.svg';
         
@@ -317,7 +317,7 @@
         public static function Subir_foto($file, $id_activo){
             $file_temp = $file['tmp_name'];
             $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
-            $destino = '../img/img_activos/';
+            $destino = 'D:/inventario_img/activos/';
             $nombre_img = $id_activo . '.' . $extension;
             move_uploaded_file($file_temp, $destino.$nombre_img);
             try {
@@ -335,7 +335,7 @@
         public static function Actualizar_foto($file, $id_activo) {
             $file_temp = $file['tmp_name'];
             $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
-            $destino = '../img/img_activos/';
+            $destino = 'D:/inventario_img/activos/';
         
             $foto_factura = Activos::BuscarParaEditar($id_activo)->foto_factura;
             // Eliminar espacios en blanco y obtener los últimos 2 caracteres
